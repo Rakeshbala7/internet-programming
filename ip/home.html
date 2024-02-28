@@ -1,0 +1,97 @@
+.<!DOCTYPE html>
+<html>
+<head>
+	<title>online Shopping</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.slideshow-container {
+		  max-width: 1000px;
+		  overflow: hidden;
+		  position: relative;
+		  margin: auto;
+		}
+	
+		.slideshow-container img {
+		  display: none;
+		  width: 100%;
+		}
+	
+		.slideshow-container img.active {
+		  display: block;
+		}
+	  </style>
+	  <script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  var slideshowImages = document.querySelectorAll(".slideshow-container img");
+		  var currentImageIndex = 0;
+		  var slideshowInterval;
+	
+		  function showNextImage() {
+			slideshowImages[currentImageIndex].classList.remove("active");
+			currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+			slideshowImages[currentImageIndex].classList.add("active");
+		  }
+	
+		  function startSlideshow() {
+			slideshowInterval = setInterval(showNextImage, 2250); 
+		  }
+	
+		  function stopSlideshow() {
+			clearInterval(slideshowInterval);
+		  }
+	
+		  startSlideshow();
+		});
+	  </script>
+</head>
+<body>
+	<header>
+		<h1>ONLINE SHOPPING</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="product.html">Products</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+				<li><a href="FORM.html">Registration</a></li>
+				<li><a href="login1.html">login</a></li>
+			</ul>
+	</header>
+	<main>
+		<section class="hero">
+			<h2>Welcome to our Online Shopping</h2>
+			<p>We have a wide selection of Dress at affordable prices.</p>
+			<div class="slideshow-container">
+				<img class="active" src="images/backsc1.webp" alt="Image 1">
+				<img src="images/backsc2.webp" alt="Image 2">
+				<a href="product.html"><img src="images/backsc3.webp" alt="Image 3"></a>
+			  </div>
+		</section>
+		<section class="products">
+			<h2>STRIGHT OUT OF CELEBRITY CLOSETS</h2>
+			<div class="product">
+				<img src="images/scroll1.jpg">
+				<h3>Kids</h3>
+				<p>All kinds of Traditional wears</p>
+				<a href="page" class="btn">Buy Now</a>
+			</div>
+			<div class="product">
+				<img src="images/scroll2.jpg" >
+				<h3>Mens & women</h3>
+				<p>Perimum Brands at low price</p>
+				<a href="#" class="btn">Buy Now</a>
+			</div>
+			<div class="product">
+				<img src="images/scroll3.jpg" >
+				<h3>New collection</h3>
+				<p>New collection for this summer</p>
+				<a href="#" class="btn">Buy Now</a>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 Online E-Shopping. All rights reserved.</p>
+	</footer>
+</body>
+</html>
